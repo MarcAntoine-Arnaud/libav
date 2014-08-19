@@ -1,0 +1,19 @@
+language: c
+
+before_install: sudo apt-get -y install autoconf automake build-essential libass-dev libgpac-dev \
+  libsdl-dev libtheora-dev libtool libva-dev libvdpau-dev libvorbis-dev libx11-dev \
+  libxfixes-dev pkg-config texi2html zlib1g-dev libmp3lame-dev
+
+compiler:
+  - clang
+  - gcc
+
+script: ./configure && make
+
+notifications:
+  recipients:
+    - arnaud.marcantoine@gmail.com
+  email:
+    on_success: change
+    on_failure: always
+
